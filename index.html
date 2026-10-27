@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChispaLab</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #101027, #30205c);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .caja {
+      padding: 35px;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #a78bfa;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    button {
+      background: #8b5cf6;
+      color: white;
+      border: none;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #7c3aed;
+    }
+  </style>
+</head>
+<body>
+  <div class="caja">
+    <h1>⚡ ChispaLab</h1>
+    <p>¡Bienvenido a tu laboratorio de inventos!</p>
+    <p id="idea">¿Qué inventaremos hoy?</p>
+    <button onclick="inventar()">¡Crear un invento!</button>
+  </div>
+
+  <script>
+    function inventar() {
+      const inventos = [
+        "Una mochila que te sigue volando.",
+        "Un lápiz que convierte dibujos en objetos.",
+        "Un robot que ordena tu habitación.",
+        "Una bicicleta que funciona con energía solar.",
+        "Un reloj que traduce el idioma de los animales.",
+        "Unos zapatos que iluminan el camino.",
+        "Una máquina que convierte basura en juguetes."
+      ];
+
+      const numero = Math.floor(Math.random() * inventos.length);
+      document.getElementById("idea").textContent = inventos[numero];
+    }
+  </script>
+</body>
+</html>
