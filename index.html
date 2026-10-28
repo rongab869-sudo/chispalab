@@ -56,21 +56,32 @@
     <button onclick="inventar()">¡Crear un invento!</button>
   </div>
 
-  <script>
-    function inventar() {
-      const inventos = [
-        "Una mochila que te sigue volando.",
-        "Un lápiz que convierte dibujos en objetos.",
-        "Un robot que ordena tu habitación.",
-        "Una bicicleta que funciona con energía solar.",
-        "Un reloj que traduce el idioma de los animales.",
-        "Unos zapatos que iluminan el camino.",
-        "Una máquina que convierte basura en juguetes."
-      ];
+ <script>
+function inventar() {
+  const inventos = [
+    "Una mochila que te sigue volando.",
+    "Un lápiz que convierte dibujos en objetos.",
+    "Un robot que ordena tu habitación.",
+    "Una bicicleta que funciona con energía solar.",
+    "Un reloj que traduce el idioma de los animales.",
+    "Unos zapatos que iluminan el camino.",
+    "Una máquina que convierte basura en juguetes."
+  ];
 
-      const numero = Math.floor(Math.random() * inventos.length);
-      document.getElementById("idea").textContent = inventos[numero];
-    }
-  </script>
-</body>
-</html>
+  const numero = Math.floor(Math.random() * inventos.length);
+
+  document.getElementById("idea").textContent =
+    inventos[numero];
+}
+
+function copiarInvento() {
+  const idea = document.getElementById("idea").textContent;
+
+  navigator.clipboard.writeText(idea)
+    .then(() => alert("¡Invento copiado!"))
+    .catch(() => alert("No se pudo copiar el invento."));
+}
+</script>
+    .then(() => alert("¡Invento copiado!"))
+    .catch(() => alert("No se pudo copiar. Intenta otra vez."));
+}<button onclick="copiarInvento()">📋 Copiar invento</button
